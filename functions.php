@@ -239,38 +239,15 @@ acf_add_local_field_group(array(
 	),
 ));
 
+
 acf_add_local_field_group(array(
-	"key" => "location",
-	"title" => "Location field group",
+	"key" => "menu_item_fields",
+	"title" => "Menu item fields",
 	"fields" => array(
 		array(
-			'key' => 'key_business_name',
-			'label' => 'Business name',
-			'name' => 'business_name',
-			'type' => 'text',
-		),
-		array(
-			'key' => 'key_adress',
-			'label' => 'Adress',
-			'name' => 'adress',
-			'type' => 'text',
-		),
-		array(
-			'key' => 'key_phone_number',
-			'label' => 'Phone number',
-			'name' => 'phone_number',
-			'type' => 'text',
-		),
-		array(
-			'key' => 'key_direction',
-			'label' => 'Direction',
-			'name' => 'direction',
-			'type' => 'text',
-		),
-		array(
-			'key' => 'key_map',
-			'label' => 'Map link',
-			'name' => 'map',
+			'label' => 'Menu item number',
+			'key' => 'key_menu_item_number',
+			'name' => 'menu_item_number',
 			'type' => 'text',
 		),
 	),

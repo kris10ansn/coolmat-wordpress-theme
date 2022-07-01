@@ -57,7 +57,12 @@ if (have_posts()) {
 
 	<div class="grid">
 		<?php
-		query_posts('post_type=menu_item&order=ASC');
+		query_posts([
+			"post_type" => "menu_item",
+			"order_by" => "meta_value",
+			"meta_key" => "menu_item_number",
+			"order" => "DESC"
+		]);
 
 		if (have_posts()) {
 			while (have_posts()) {

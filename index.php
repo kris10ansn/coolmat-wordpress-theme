@@ -60,11 +60,9 @@ if (have_posts()) {
 		query_posts('post_type=menu_item&order=ASC');
 
 		if (have_posts()) {
-			$menu_index = 1;
 			while (have_posts()) {
 				the_post();
 				get_template_part('template-parts/content', get_post_type());
-				$menu_index++;
 			}
 
 			the_posts_navigation();

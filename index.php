@@ -32,8 +32,8 @@ if (have_posts()) {
 
 <section id="hero">
 	<div class="inner">
-		<h1>cool mat <span class="colored"><?= get_the_title() ?></span></h1>
-		<p><span class="colored">cool mat</span> is a restuarant that creates future flavor nostalgia of street food.</p>
+		<h1><?php bloginfo("name") ?> <span class="colored"><?= get_the_title() ?></span></h1>
+		<p><span class="colored"><?php bloginfo("name") ?></span> <?php bloginfo("description") ?></p>
 	</div>
 </section>
 

@@ -46,7 +46,9 @@
 
 				<!-- TODO: Language selector -->
 				<div class="lang-select">
-					EN | KOR
+					<a lang="en-US" hreflang="en-US" href="<?= site_url('/en') ?>">EN</a>
+					|
+					<a lang="ko-KR" hreflang="ko-KR" href="<?= site_url('/kr') ?>">KOR</a>
 				</div>
 			</div>
 		</header>

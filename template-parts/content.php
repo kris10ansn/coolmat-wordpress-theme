@@ -9,13 +9,12 @@
  */
 
 
-global $menu_index;
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class("entry"); ?>>
 	<header>
 		<h1><?php the_title() ?></h1>
-		<div class="menu-number"><?= $menu_index ?></div>
+		<div class="menu-number"><?php the_field("menu_item_number") ?></div>
 		<div class="price"><?php the_content() ?></div>
 	</header>
 

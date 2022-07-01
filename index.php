@@ -13,6 +13,13 @@
  * @package coolmat
  */
 
+function get_category_description($category_name)
+{
+	return category_description(
+		get_cat_ID($category_name)
+	);
+}
+
 get_header();
 
 query_posts('post_type=menu_item&posts_per_page=1&orderby=rand');
@@ -46,7 +53,7 @@ if (have_posts()) {
 </section>
 
 <section id="menu">
-	<h1 class="section-title">menu</h1>
+	<h1 class="section-title"><?= get_category_description("Menu") ?></h1>
 
 	<div class="grid">
 		<?php
@@ -71,7 +78,7 @@ if (have_posts()) {
 
 <section id="directions">
 	<div class="inner">
-		<h1 class="section-title">directions to cool mat</h1>
+		<h1 class="section-title"><?= get_category_description("Locations") ?></h1>
 
 		<div class="locations">
 			<?php

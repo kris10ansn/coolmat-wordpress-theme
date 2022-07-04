@@ -12,6 +12,7 @@
  *
  * @package coolmat
  */
+require_once __DIR__ . "/util/get_custom_field.php";
 
 function get_category_description($category_name)
 {
@@ -20,13 +21,6 @@ function get_category_description($category_name)
 	);
 }
 
-function get_custom_field($field_name) {
-    if (function_exists('the_field')) {
-        return the_field($field_name);
-    }
-
-    return '[ADD PLUGIN: https://www.advancedcustomfields.com/]';
-}
 
 get_header();
 

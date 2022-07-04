@@ -26,31 +26,32 @@ query_posts('post_type=menu_item&posts_per_page=1&orderby=rand');
 
 if (have_posts()) {
 	the_post();
+
+	?>
+	<section id="hero">
+		<div class="inner">
+			<h1><?php bloginfo("name") ?> <span class="colored"><?= get_the_title() ?></span></h1>
+			<p><span class="colored"><?php bloginfo("name") ?></span> <?php bloginfo("description") ?></p>
+		</div>
+	</section>
+	<?php
 }
 
-?>
-
-<section id="hero">
-	<div class="inner">
-		<h1><?php bloginfo("name") ?> <span class="colored"><?= get_the_title() ?></span></h1>
-		<p><span class="colored"><?php bloginfo("name") ?></span> <?php bloginfo("description") ?></p>
-	</div>
-</section>
-
-<?php
 
 query_posts('post_type=intro');
 if (have_posts()) {
 	the_post();
+    ?>
+    <section id="intro">
+        <div class="inner">
+            <h1><?= get_the_title() ?></h1>
+            <p><?= get_the_content() ?></p>
+        </div>
+    </section>
+    <?php
 }
 
 ?>
-<section id="intro">
-	<div class="inner">
-		<h1><?= get_the_title() ?></h1>
-		<p><?= get_the_content() ?></p>
-	</div>
-</section>
 
 <section id="menu">
 	<h1 class="section-title"><?= get_category_description("Menu") ?></h1>

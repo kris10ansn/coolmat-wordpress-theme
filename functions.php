@@ -193,75 +193,76 @@ add_action("init", function () {
 	));
 });
 
-acf_add_local_field_group(array(
-	"key" => "location",
-	"title" => "Location field group",
-	"fields" => array(
-		array(
-			'key' => 'key_business_name',
-			'label' => 'Business name',
-			'name' => 'business_name',
-			'type' => 'text',
-		),
-		array(
-			'key' => 'key_adress',
-			'label' => 'Adress',
-			'name' => 'adress',
-			'type' => 'text',
-		),
-		array(
-			'key' => 'key_phone_number',
-			'label' => 'Phone number',
-			'name' => 'phone_number',
-			'type' => 'text',
-		),
-		array(
-			'key' => 'key_direction',
-			'label' => 'Direction',
-			'name' => 'direction',
-			'type' => 'text',
-		),
-		array(
-			'key' => 'key_map',
-			'label' => 'Map link',
-			'name' => 'map',
-			'type' => 'text',
-		),
-	),
-	'location' => array(
-		array(
+if (function_exists("acf_add_local_field_group")) {
+	acf_add_local_field_group(array(
+		"key" => "location",
+		"title" => "Location field group",
+		"fields" => array(
 			array(
-				'param' => 'post_type',
-				'operator' => '==',
-				'value' => 'location',
+				'key' => 'key_business_name',
+				'label' => 'Business name',
+				'name' => 'business_name',
+				'type' => 'text',
+			),
+			array(
+				'key' => 'key_adress',
+				'label' => 'Adress',
+				'name' => 'adress',
+				'type' => 'text',
+			),
+			array(
+				'key' => 'key_phone_number',
+				'label' => 'Phone number',
+				'name' => 'phone_number',
+				'type' => 'text',
+			),
+			array(
+				'key' => 'key_direction',
+				'label' => 'Direction',
+				'name' => 'direction',
+				'type' => 'text',
+			),
+			array(
+				'key' => 'key_map',
+				'label' => 'Map link',
+				'name' => 'map',
+				'type' => 'text',
 			),
 		),
-	),
-));
-
-
-acf_add_local_field_group(array(
-	"key" => "menu_item_fields",
-	"title" => "Menu item fields",
-	"fields" => array(
-		array(
-			'label' => 'Menu item number',
-			'key' => 'key_menu_item_number',
-			'name' => 'menu_item_number',
-			'type' => 'text',
-		),
-	),
-	'location' => array(
-		array(
+		'location' => array(
 			array(
-				'param' => 'post_type',
-				'operator' => '==',
-				'value' => 'menu_item',
+				array(
+					'param' => 'post_type',
+					'operator' => '==',
+					'value' => 'location',
+				),
 			),
 		),
-	),
-));
+	));
 
+
+	acf_add_local_field_group(array(
+		"key" => "menu_item_fields",
+		"title" => "Menu item fields",
+		"fields" => array(
+			array(
+				'label' => 'Menu item number',
+				'key' => 'key_menu_item_number',
+				'name' => 'menu_item_number',
+				'type' => 'text',
+			),
+		),
+		'location' => array(
+			array(
+				array(
+					'param' => 'post_type',
+					'operator' => '==',
+					'value' => 'menu_item',
+				),
+			),
+		),
+	));
+}
 
 
 /**

@@ -20,6 +20,14 @@ function get_category_description($category_name)
 	);
 }
 
+function get_custom_field($field_name) {
+    if (function_exists('the_field')) {
+        return the_field($field_name);
+    }
+
+    return '[ADD PLUGIN: https://www.advancedcustomfields.com/]';
+}
+
 get_header();
 
 query_posts('post_type=menu_item&posts_per_page=1&orderby=rand');
@@ -94,17 +102,17 @@ if (have_posts()) {
 			?>
 
 					<div class="location">
-						<iframe src="<?php the_field("map") ?>" class="map" width="710" height="720" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+						<iframe src="<?= get_custom_field("map") ?>" class="map" width="710" height="720" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
 
 						<div class="info">
 							<h2>Business Name</h2>
-							<p><?php the_field("business_name") ?></p>
+							<p><?= get_custom_field("business_name") ?></p>
 							<h2>Address</h2>
-							<p><?php the_field("adress") ?></p>
+							<p><?= get_custom_field("adress") ?></p>
 							<h2>Phone Number</h2>
-							<p><?php the_field("phone_number") ?></p>
+							<p><?= get_custom_field("phone_number") ?></p>
 							<h2>Direction</h2>
-							<p><?php the_field("direction") ?></p>
+							<p><?= get_custom_field("direction") ?></p>
 						</div>
 					</div>
 
